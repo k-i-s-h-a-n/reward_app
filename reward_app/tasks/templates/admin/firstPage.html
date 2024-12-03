@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Card Styles */
+        .outer {
+            background: #fff;
+            opacity: 0.9;
+            width: 960px;
+            margin: 10px auto;
+            border-radius: 7px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .outer.dark {
+            background: #e8e7e7;
+        }
+
+        /* Dot Container with Grey Background */
+        .dot-container {
+            display: flex;
+            align-items: center;
+            background-color: #6e6e6e;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #f9f9f9;
+            border-radius: 50%;
+            margin: 0 4px;
+        }
+
+        .dot.red {
+            background: #FF6057;
+            border: 1px solid #E14640;
+        }
+
+        .dot.amber {
+            background: #FFBD2E;
+            border: 1px solid #DFA123;
+        }
+
+        .dot.green {
+            background: #27C93F;
+            border: 1px solid #1DAD2B;
+        }
+
+        /* New row with white background */
+        .new-row {
+            background-color: #fff;
+            padding: 15px 20px;
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .new-row h2 {
+            font-family: system-ui;
+            font-size: 26px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: -11px;
+        }
+
+        /* Button Styles */
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Column layout for buttons */
+            gap: 12px;
+            padding: 50px;
+            width: 200px; /* Set width for button column */
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid #3234eb;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 150px; /* Fixed width for equal size buttons */
+            box-sizing: border-box;
+        }
+
+        .button i {
+            margin-right: 8px;
+        }
+
+        .button.home {
+            background-color: transparent;
+            color: #3234eb;
+        }
+
+        .button.home:hover {
+            background-color: #3234eb;
+            color: white;
+        }
+
+        .button.add-apps {
+            background-color: #3234eb;
+            color: white;
+            border: none;
+        }
+
+        .button.add-apps:hover {
+            background-color: #0056b3;
+        }
+
+        /* Side Card Styles */
+        .side-card {
+            background-color: #fff;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 0;
+            width: 100%; /* Take full width of the parent container */
+            max-width: 760px; /* Optional: Limit max width of side card */
+            margin-left: 20px; /* Space between side card and buttons */
+            height: 100%; /* Make side card take full height */
+        }
+
+        /* Flex container for buttons and side card */
+        .button-side-card-container {
+            display: flex;
+            align-items: stretch; /* Stretch to take full height */
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            .outer {
+                width: 100%;
+            }
+
+            .button-side-card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .side-card {
+                width: 100%; /* Side card takes full width on small screens */
+                margin-top: 20px;
+                margin-left: 0;
+                height: auto; /* Reset height */
+            }
+
+            .button-container {
+                align-items: center;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .button {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Outer card container with dark background -->
+    <div class="outer dark">
+        <!-- Status dot section -->
+        <div class="dot-container">
+            <div class="dot red"></div>
+            <div class="dot amber"></div>
+            <div class="dot green"></div>
+        </div>
+
+        <!-- New Row with White Background and "Hello admin!" Text -->
+        <div class="new-row">
+            <h2>Hello Admin</h2>
+        </div>
+
+        <!-- Buttons and Side Card -->
+        <div class="button-side-card-container">
+            <!-- Button Section (Left Side) -->
+            <div class="button-container">
+                <a href="#" class="button home">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#" class="button add-apps">
+                    <i class="fas fa-plus"></i> Add Apps
+                </a>
+            </div>
+
+            <!-- Side Card Section (Right Side) -->
+            <div class="side-card">
+                <h3>Additional Information</h3>
+                <p>This is a new white card that covers the remaining space on the right side and stays within the container without extending above it.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
